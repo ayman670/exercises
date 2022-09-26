@@ -107,6 +107,12 @@ let aBooksSale = (bookTitle, quantity, availableBalance) => {
 // call a method
 aBooksSale("Clean Code", 3, 1000);
 
+
+
+
+
+
+
 //  test
 //    // رقم الكتاب Book Id
 // switch (bookId) {
