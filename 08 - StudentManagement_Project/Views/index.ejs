@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gg</title>
+</head>
+
+<body lrt>
+  <div>
+    <h1>مشروع ادارة طلاب والمهفوم الأساسي هو اضافة طالب وقراءة معلوماته وحذفه وتحديث </h1>
+    <!--create new student-->
+    <form action="/create" method="post">
+      <input type="text" name="name" placeholder="student name" />
+      <input type="text" name="age" placeholder="student age" />
+      <input type="submit" name="submit" />
+    </form>
+
+    <!--show students from Database-->
+    <ul>
+      <% record.forEach(element=> { %>
+        <li>
+          <%= element.name %> : <%= element.age %>
+        </li>
+
+        <!--Delete-->
+        <form action="/delete/<%=element.id %>" method="post">
+          <button>delete a student</button>
+          <br>
+        </form>
+
+        <!--Update-->
+        <form action="/update/<%=element.id %>?_method=PUT" method="POST">
+          <label for="name">update a student!</label>
+          <input type="text" value="<%=  element.name %> " name="name" />
+          <input type="text" value="<%=  element.age %> " name="age" />
+
+          <button>update</button>
+        </form>
+    </ul>
+
+    <% }) %>
+  </div>
+</body>
+
+</html>
