@@ -66,7 +66,7 @@ function searchABook() {
 //بيع كتاب وتصدير فاتورة
 let aBooksSale = (bookTitle, quantity, availableBalance) => {
     for (let i = 0; i < books.length; i++) {
-        if (books.includes(bookTitle) == true) {
+        if (!books.includes(bookTitle) ) {
             for (let j = 0; j < books.length; j++) {
                 if (quantity <= books[i][4] && availableBalance >= books[i][3] * quantity && bookTitle ===  books[i][1]) {
                     let a =  quantity;
