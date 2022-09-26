@@ -105,7 +105,7 @@ let aBooksSale = (bookTitle, quantity, availableBalance) => {
 };
 
 // call a method
-aBooksSale("Clean Code", 3, 1000);
+aBooksSale("Clean Code", 3, 10);
 
 
 
