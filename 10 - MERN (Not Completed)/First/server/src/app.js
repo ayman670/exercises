@@ -8,7 +8,7 @@ const v1 = require('./routes/v1');
 
 
 //------------ DB Config ------------//
-mongoose.connect(process.env.DB_URL)
+mongoose.connect("mongodb://localhost:27017/MERN");
 mongoose.connection.on('connected',()=>{
 console.log('hello connnnn')
 });

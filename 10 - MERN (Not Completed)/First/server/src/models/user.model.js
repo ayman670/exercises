@@ -7,7 +7,10 @@ const userSchema = Schema({
     email : {type : String , unique : true , required: true, index: true},
     password : {type : String, required : true},
     date : {type : Date, default: new Date()}
-});
+}
+);
 
-const User = mongoose.model(userSchema, '');
+
+
+const User = mongoose.model('test',userSchema);
 module.exports = User;
