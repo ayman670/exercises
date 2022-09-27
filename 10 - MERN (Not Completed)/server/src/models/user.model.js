@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const { use } = require('../app');
 
 const {Schema} = mongoose;
 
@@ -31,6 +30,8 @@ userSchema.pre('save', async function(next){
         return next(e);
     }
 })
+
+
 
 
 const User = mongoose.model('test',userSchema);
