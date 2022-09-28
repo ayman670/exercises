@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Tasks from "./Tasks";
 
 export default function App() {
   const [list, setList] = useState([]);
