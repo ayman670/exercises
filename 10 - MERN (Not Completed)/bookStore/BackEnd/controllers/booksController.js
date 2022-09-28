@@ -19,7 +19,7 @@ CRUD.getAllBooks = async (req, res, next) => {
 
 CRUD.addBooks = async (req, res, next) => {
     let book;
-    let { name, author, description, price, available } = req.body;
+    let { name, author, description, price, available, image } = req.body;
     try {
         book = await new Book({
             name,
@@ -27,6 +27,7 @@ CRUD.addBooks = async (req, res, next) => {
             description,
             price,
             available,
+            image
         });
         await book.save();
     } catch (e) {
@@ -57,7 +58,7 @@ CRUD.getById = async (req, res, next) => {
 CRUD.updateBook = async (req, res, next) => {
     let book;
     let id = req.params.id;
-    let { name, author, description, price, available } = req.body;
+    let { name, author, description, price, available, image } = req.body;
     try {
         book = await Book.findByIdAndUpdate(id, {
             name,
@@ -65,6 +66,7 @@ CRUD.updateBook = async (req, res, next) => {
             description,
             price,
             available,
+            image
         });
         book = await book.save();
     } catch (e) {
