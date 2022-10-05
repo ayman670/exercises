@@ -9,8 +9,8 @@
     </p>
     <% } %>
 
-    <h3>Add Product</h3>
     <form action="/admin/add" method="POST" enctype="multipart/form-data">
+        <br>
         <input type="text" class="form-control" name="name" placeholder="Name">
         <% let nameError = validationErrors.find(err => err.param === 'name') %>
         <% if (nameError) { %>
@@ -18,6 +18,8 @@
                 <%= nameError.msg %>
             </p>
         <% } %>
+        <br>
+
         <input type="number" class="form-control" name="price" placeholder="Price">
         <% let priceError = validationErrors.find(err => err.param === 'price') %>
         <% if (priceError) { %>
@@ -25,6 +27,7 @@
                 <%= priceError.msg %>
             </p>
         <% } %>
+        <br>
         <textarea type="password" class="form-control" name="description" placeholder="Description"></textarea>
         <% let descriptionError = validationErrors.find(err => err.param === 'description') %>
         <% if (descriptionError) { %>
@@ -32,18 +35,21 @@
                 <%= descriptionError.msg %>
             </p>
         <% } %>
+        <br>
         <select type="password" class="form-control" name="category">
             <option value="" selected>Choose a category</option>
             <option value="clothes">Clothes</option>
             <option value="phones">Phones</option>
             <option value="computers">Computers</option>
         </select>
+        <br>
         <% let categoryError = validationErrors.find(err => err.param === 'category') %>
         <% if (categoryError) { %>
             <p class="alert alert-danger">
                 <%= categoryError.msg %>
             </p>
         <% } %>
+        <br>
         <input type="file" class="form-control" name="image" placeholder="Image">
         <% let imageError = validationErrors.find(err => err.param === 'image') %>
         <% if (imageError) { %>
@@ -51,6 +57,7 @@
                 <%= imageError.msg %>
             </p>
         <% } %>
+        <br>
         <input type="submit" value="Add Product" class="btn btn-primary">
     </form>
 </div>

@@ -2,7 +2,7 @@
 <%- include('parts/navbar')%>
 
 <div class="container text-center">
-    <h3>Verify Order</h3>
+    <h3 >Verify Order</h3>
     <% if(validationError) { %>
     <p class="alert alert-danger">
     <%= validationError.msg %>
@@ -15,7 +15,7 @@
         <input type="hidden" name="amount" value="<%= cart.amount%>">
         <input type="hidden" name="productId" value="<%= cart.productId%>">
         <input type="hidden" name="userId" value="<%= cart.userId%>">
-        <input type="text" name="address" placeholder="Enter the Address" class="form-control">
+        <input type="text" name="address" placeholder="Enter the Address" class="form-control"><br>
         <input type="submit" value="Verify" class="btn btn-primary">
     </form>
 </div>

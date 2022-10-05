@@ -2,8 +2,10 @@
 <%- include('parts/navbar')%>
 
 <div class="container text-center">
-    <h3>Create Account</h3>
+    <br>
+
     <form action="/signup" method="POST">
+
         <input type="text" class="form-control" name="username" placeholder="Username">
         <% let usernameError = validationErrors.find(err => err.param === 'username') %>
         <% if (usernameError) { %>
@@ -11,6 +13,7 @@
                 <%= usernameError.msg %>
             </p>
         <% } %>
+        <br>
         <input type="email" class="form-control" name="email" placeholder="E-mail">
         <% let emailError = validationErrors.find(err => err.param === 'email') %>
         <% if (emailError) { %>
@@ -18,6 +21,8 @@
                 <%= emailError.msg %>
             </p>
         <% } %>
+        <br>
+
         <input type="password" class="form-control" name="password" placeholder="Password">
         <% let passwordError = validationErrors.find(err => err.param === 'password') %>
         <% if (passwordError) { %>
@@ -25,6 +30,8 @@
                 <%= passwordError.msg %>
             </p>
         <% } %>
+        <br>
+
         <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
         <% let passwordConfirmError = validationErrors.find(err => err.param === 'passwordConfirm') %>
         <% if (passwordConfirmError) { %>
@@ -32,6 +39,8 @@
                 <%= passwordConfirmError.msg %>
             </p>
         <% } %>
+        <br>
+
         <input type="submit" value="Create Account" class="btn btn-primary">
     </form>
     <% if(authError) { %>
