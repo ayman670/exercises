@@ -22,6 +22,7 @@ const STORE = new SessionStore({
     collection: "sessions" // NAME THE collection
 });
 
+
 app.use(
     session({
         secret: "AYMAN THE BEST PROGRAMMER ON THE WORLD.", //SESSIONهذا لتشفير ال 
@@ -73,6 +74,6 @@ app.use((req, res, next) => {
 
 
 //منفذ الدخول للسيرفر
-app.listen(8080, () => {
+app.listen(5050, () => {
     console.log("server listen on port 8080");
 });

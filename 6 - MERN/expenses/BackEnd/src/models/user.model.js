@@ -31,6 +31,7 @@ userSchema.pre('save', async (next)=>{
     }
 })
 
+
 userSchema.methods.isPasswordCorrect = (password, hashed, callback) => {
     bcrypt.compare(password, hashed, (err, success)=>{
         if(err) {return callback(err); }

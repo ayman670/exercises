@@ -8,8 +8,8 @@ const methodOverride = require('method-override');
 
 app.use(session({
     secret:"ashh",
-    resave: true, 
-    saveUninitialized: true
+    resave: false, 
+    saveUninitialized: false
 }))
 app.use(methodOverride('_method', { methods: ["POST", 'GET'] }));
 
@@ -26,6 +26,6 @@ app.use('/', auth);
 
 
 
-app.listen(process.env.PORT || 8080, () => {
-    console.log("server listen on port  http://localhost:8080");
+app.listen(process.env.PORT || 7070, () => {
+    console.log("server listen on port  http://localhost:7070");
 });

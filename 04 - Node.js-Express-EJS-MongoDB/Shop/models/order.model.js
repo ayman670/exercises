@@ -16,7 +16,6 @@ const orderSchema = mongoose.Schema({
         type: String,
         default: "pending"
     },
-    timestamp: Number
 });
 
 // name of Collections and Schema
